@@ -1,0 +1,191 @@
+[gd_scene load_steps=25 format=3 uid="uid://b5iv6s7pdt470"]
+
+[ext_resource type="Script" path="res://Scenes/World.gd" id="1_3xqca"]
+[ext_resource type="PackedScene" uid="uid://bk7agnod3vhff" path="res://Timer/CuentaAtras.tscn" id="2_yae45"]
+[ext_resource type="PackedScene" uid="uid://6bc2elnfs0h5" path="res://Items/Interactable/Elevator/Elevator.tscn" id="3_wxp2c"]
+[ext_resource type="Material" uid="uid://bexf3tjbivhhs" path="res://Scripts/outline_simple_material.tres" id="6_3kee8"]
+[ext_resource type="PackedScene" uid="uid://c05liopsecbow" path="res://Items/Interactable/Collectable/Knife/kife.tscn" id="6_lh5tr"]
+[ext_resource type="PackedScene" uid="uid://b1ibd4pg102hp" path="res://Items/Interactable/Collectable/Cup/Cup.tscn" id="7_d3h8w"]
+[ext_resource type="PackedScene" uid="uid://cn5xnli7q5gpa" path="res://Player/Player.tscn" id="7_q7dn4"]
+[ext_resource type="PackedScene" uid="uid://cttecx6c837ek" path="res://Items/Interactable/Sopa/sopa.tscn" id="7_qkvsr"]
+[ext_resource type="PackedScene" uid="uid://dma6c1kidspde" path="res://Items/Interactable/Platform/Platform.tscn" id="8_og3it"]
+[ext_resource type="PackedScene" uid="uid://c4lfj3kbypy0b" path="res://Items/Interactable/Collectable/Mate/mate.tscn" id="8_qmxc3"]
+[ext_resource type="PackedScene" uid="uid://be6wiqua877j2" path="res://Items/Interactable/Room/Room.tscn" id="9_5heh6"]
+[ext_resource type="PackedScene" uid="uid://budu3tmyi4r0c" path="res://Items/Interactable/Collectable/Key/Key.tscn" id="9_eehm1"]
+[ext_resource type="PackedScene" uid="uid://2bdgen1hqos6" path="res://Items/Interactable/Collectable/Sombrero/Sombrero.tscn" id="9_n2gw7"]
+[ext_resource type="Script" path="res://Items/Interactable/Collectable/Sombrero/sombrero.gd" id="10_6dm63"]
+[ext_resource type="PackedScene" uid="uid://de7c24pcavay4" path="res://Items/Interactable/Collectable/Mosquito/mosquito.tscn" id="11_b22sd"]
+[ext_resource type="Texture2D" uid="uid://ce4hesltogc42" path="res://Items/Interactable/Collectable/Sombrero/sombrero.png" id="11_g5inv"]
+[ext_resource type="PackedScene" uid="uid://b3wmu6m0ruyjm" path="res://Items/Interactable/Collectable/Planta/planta.tscn" id="13_jquwm"]
+[ext_resource type="PackedScene" uid="uid://bov8jvisqwqvk" path="res://Items/Interactable/Collectable/Guitarra/guitarra.tscn" id="13_tqtt0"]
+[ext_resource type="PackedScene" uid="uid://bfwa6xkhjmivy" path="res://Items/Interactable/Collectable/Lanza Rota/lanza_rota.tscn" id="14_4wh14"]
+[ext_resource type="PackedScene" uid="uid://biqnkdq2iv56n" path="res://Items/Interactable/Collectable/Reloj/reloj.tscn" id="14_ii1ob"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_5lxv2"]
+
+[sub_resource type="Sky" id="Sky_uwcpd"]
+sky_material = SubResource("PhysicalSkyMaterial_5lxv2")
+
+[sub_resource type="Environment" id="Environment_8tfxd"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 1.5
+sky = SubResource("Sky_uwcpd")
+sky_custom_fov = 1.0
+ambient_light_color = Color(0.950291, 0.950291, 0.950291, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypoh0"]
+albedo_color = Color(0.28, 0.28, 0.28, 1)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_3xqca")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8tfxd")
+
+[node name="CuentaAtras" parent="." instance=ExtResource("2_yae45")]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8924, -0.503291, 2.12982)
+material_overlay = ExtResource("6_3kee8")
+use_collision = true
+size = Vector3(85.3057, 1, 48.3268)
+
+[node name="Floor2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22279, 5.4876, 2.49428)
+visible = false
+material_overlay = ExtResource("6_3kee8")
+use_collision = true
+size = Vector3(19.9601, 1, 12.084)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20592, 997.465, -2.58043)
+operation = 2
+size = Vector3(6.22688, 2004.93, 6.29395)
+
+[node name="Mesada2" type="CSGCylinder3D" parent="Floor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91217, 0.745431, 0)
+material_overlay = ExtResource("6_3kee8")
+use_collision = true
+radius = 4.787
+height = 0.471
+sides = 9
+material = SubResource("StandardMaterial3D_ypoh0")
+
+[node name="Room" parent="." instance=ExtResource("9_5heh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77639, 1.45998, 2.52209)
+
+[node name="Elevator" parent="." instance=ExtResource("3_wxp2c")]
+
+[node name="Platforms" type="Node3D" parent="."]
+transform = Transform3D(-1.12498, 0, 0.00636153, 0, 1.125, 0, -0.00636153, 0, -1.12498, 23.3301, -0.367327, -3.24501)
+
+[node name="Platform" parent="Platforms" instance=ExtResource("8_og3it")]
+transform = Transform3D(0.999982, 0, 0.00593408, 0, 1, 0, -0.00593408, 0, 0.999982, 0.586725, 0.641413, -0.00331879)
+material_overlay = ExtResource("6_3kee8")
+material = null
+
+[node name="Mesa" parent="Platforms" instance=ExtResource("8_og3it")]
+transform = Transform3D(0.999982, 0, 0.00593408, 0, 0.999957, 0, -0.00593408, 0, 0.999982, 15.0892, 0.9857, -9.33479)
+material_overlay = ExtResource("6_3kee8")
+size = Vector3(16.7659, 1.12207, 1.27295)
+material = null
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("8_og3it")]
+transform = Transform3D(1, 0, -4.65661e-09, 0, 1, 0, 4.65661e-09, 0, 1, 2.9096, 1.25609, 0.0454302)
+material_overlay = ExtResource("6_3kee8")
+material = null
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("8_og3it")]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 4.9931, 2.09176, 0.00196457)
+material_overlay = ExtResource("6_3kee8")
+material = null
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("8_og3it")]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 5.01524, 2.78331, -2.31507)
+material_overlay = ExtResource("6_3kee8")
+material = null
+
+[node name="Items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2273, 2.2754, 5.86549)
+
+[node name="Sopa" parent="Items" instance=ExtResource("7_qkvsr")]
+transform = Transform3D(1, 0, 0, 0, 0.997404, 0.0720023, 0, -0.0720023, 0.997404, -42.9482, 2.16396, -12.4802)
+visible = false
+
+[node name="Knife" parent="Items" instance=ExtResource("6_lh5tr")]
+transform = Transform3D(0.317818, 0, -0.948152, 0, 1, 0, 0.948152, 0, 0.317818, -35.9331, -0.736249, -3.09674)
+visible = false
+collision_layer = 2
+collision_mask = 3
+
+[node name="Cup" parent="Items" instance=ExtResource("7_d3h8w")]
+transform = Transform3D(0.664696, 0, -0.747114, 0, 1, 0, 0.747114, 0, 0.664696, -34.6089, -1.10091, 0.571839)
+visible = false
+collision_layer = 2
+collision_mask = 3
+descripcion = "Es un taza como cualquier 
+taza
+ taza"
+
+[node name="Mate" parent="Items" instance=ExtResource("8_qmxc3")]
+transform = Transform3D(0.671216, 0, 0.741262, 0, 1, 0, -0.741262, 0, 0.671216, -47.4373, 0.266922, 1.28609)
+descripcion = "¿Un Mate? pregunté, 
+pasadito de aceite si puede ser..."
+
+[node name="Sombrero" parent="Items" instance=ExtResource("9_n2gw7")]
+transform = Transform3D(-0.701079, -0.0352424, -0.712211, -0.679216, 0.337152, 0.651916, 0.217149, 0.940791, -0.260307, -52.2357, 0.543213, -8.06759)
+script = ExtResource("10_6dm63")
+max_amount_collectable = 5
+item_name = "Sombrero"
+item_texture = ExtResource("11_g5inv")
+descripcion = "sombrero de chapa para el sol radiador
+que me recargue las pilas frente a todo temor"
+
+[node name="Mosquito" parent="Items" instance=ExtResource("11_b22sd")]
+transform = Transform3D(0.636846, 0, 0.770992, 0, 1, 0, -0.770992, 0, 0.636846, -49.8456, 4.58655, -4.73679)
+
+[node name="Key" parent="Items" instance=ExtResource("9_eehm1")]
+transform = Transform3D(-0.794902, 0, 0.606738, 0, 1, 0, -0.606738, 0, -0.794902, -41.617, 1.36235, -6.77154)
+collision_layer = 2
+collision_mask = 3
+descripcion = "Con esta llave abrís la puerta!"
+
+[node name="Planta" parent="Items" instance=ExtResource("13_jquwm")]
+transform = Transform3D(-0.491056, 0, 0.871128, 0, 1, 0, -0.871128, 0, -0.491056, -58.4874, 0.448914, 1.04888)
+descripcion = "Materia viva a la deriva, organica planta
+en qué anda, la santa, que no baja de ahi arriba!"
+
+[node name="Reloj" parent="Items" instance=ExtResource("14_ii1ob")]
+transform = Transform3D(-0.962668, 0, 0.270685, 0, 1, 0, -0.270685, 0, -0.962668, -52.301, 0.989014, 1.3835)
+descripcion = "Funca conejo mientras me alejo
+Largo es el camino, y tan corto es el Tiempo
+"
+
+[node name="Guitarra" parent="Items" instance=ExtResource("13_tqtt0")]
+transform = Transform3D(0.209678, -0.378842, 0.901395, 0.0858328, 0.925461, 0.368991, -0.973996, -4.44089e-16, 0.226566, -61.8135, -1.03552, -1.23591)
+descripcion = "No pierda el ritmo que la vida es breve
+mucho autotune en las cuerdas hasta que suene leve"
+
+[node name="Lanza Rota" parent="Items" instance=ExtResource("14_4wh14")]
+transform = Transform3D(0.345445, -0.937492, -0.0421494, 0.163475, 0.104343, -0.981014, 0.924091, 0.331996, 0.189302, -46.8841, -0.830698, -8.48391)
+descripcion = "Lanzani como Peter, Barrani como Masla
+Alisten para el finde que juega el CASLA"
+
+[node name="Player" parent="." instance=ExtResource("7_q7dn4")]
+transform = Transform3D(-0.0166147, 0, 0.999862, 0, 1, 0, -0.999862, 0, -0.0166147, 9.56835, 0.996709, 5.25086)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00492182, 0.999988, 0, -0.999988, 0.00492182, 24.2671, 4.74751, 4.53928)
+light_energy = 2.668
+shadow_enabled = true
+spot_range = 12.288
+spot_attenuation = -0.65
+spot_angle = 42.92
+spot_angle_attenuation = 0.901251
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0844, 2.17266, -0.010694)
+light_energy = 1.25
+shadow_enabled = true
+omni_range = 6.55669

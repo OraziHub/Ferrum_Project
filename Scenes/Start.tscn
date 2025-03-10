@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyd27acv8ilid"]
+
+[ext_resource type="FontFile" uid="uid://50hs8n0ckrc5" path="res://Font/LondrinaShadow-Regular.ttf" id="1_ao3e4"]
+[ext_resource type="Script" path="res://Scenes/start_script.gd" id="1_qbjn0"]
+[ext_resource type="Texture2D" uid="uid://dh5kph6gdiva0" path="res://Imgs/BG_Start.png" id="1_wsgrg"]
+[ext_resource type="FontFile" uid="uid://cl0yiq4qq2mxc" path="res://Font/CabinSketch-Bold.ttf" id="4_6fv30"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x443t"]
+texture = ExtResource("1_wsgrg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrh7o"]
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(0.25, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cro2"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.25, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cphdf"]
+bg_color = Color(0, 0, 0, 0.956863)
+skew = Vector2(0.5, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iapei"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qbjn0")
+metadata/_edit_horizontal_guides_ = [525.0]
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x443t")
+
+[node name="Version Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.516
+anchor_bottom = 1.0
+offset_left = 137.0
+offset_top = 148.0
+offset_right = 158.568
+offset_bottom = -484.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "v.0.0.1
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button Intro" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_ao3e4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_rrh7o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cro2")
+text = "I N T R O"
+
+[node name="Button Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_ao3e4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_rrh7o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cro2")
+text = "A R R A N C A R"
+
+[node name="Button Project" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_ao3e4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_rrh7o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cro2")
+text = "P R O Y E C T O"
+
+[node name="Button Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -140.0
+offset_right = 43.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.59, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6fv30")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_cphdf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_iapei")
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Button Intro" to="." method="_on_button_intro_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button Project" to="." method="_on_button_project_pressed"]
+[connection signal="pressed" from="Button Exit" to="." method="_on_button_exit_pressed"]

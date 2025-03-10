@@ -31,6 +31,6 @@ mesh = SubResource("SphereMesh_7u8ye")
 shape = SubResource("CapsuleShape3D_q2wyf")
 
 [node name="EyesCast" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.422781, 0)
-target_position = Vector3(0, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 0.992782, 0.119929, 0, -0.119929, 0.992782, 0, 0.422781, 0)
+target_position = Vector3(0, 0, -4.45)
 collision_mask = 3

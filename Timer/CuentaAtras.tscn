@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk7agnod3vhff"]
+
+[ext_resource type="Script" path="res://Timer/cuenta_atras.gd" id="1_5jm4e"]
+[ext_resource type="Texture2D" uid="uid://b1lscksfbhwmm" path="res://Imgs/Marco_World.png" id="2_erxn4"]
+[ext_resource type="FontFile" uid="uid://cl0yiq4qq2mxc" path="res://Font/CabinSketch-Bold.ttf" id="2_ntt8b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxh5x"]
+texture = ExtResource("2_erxn4")
+
+[node name="CuentaAtras" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5jm4e")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pxh5x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 110.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("2_ntt8b")
+theme_override_font_sizes/font_size = 26
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

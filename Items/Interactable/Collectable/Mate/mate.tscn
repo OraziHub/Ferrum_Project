@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4lfj3kbypy0b"]
+
+[ext_resource type="PackedScene" uid="uid://4bfyfqj8s4ok" path="res://Items/Interactable/Collectable/Mate/mate.glb" id="1_nhhuu"]
+[ext_resource type="Script" path="res://Items/Interactable/Collectable/Mate/mate.gd" id="2_7suxl"]
+[ext_resource type="Texture2D" uid="uid://clyg5jvj4cevl" path="res://Items/Interactable/Collectable/Mate/mate.png" id="3_mc2hc"]
+[ext_resource type="Material" uid="uid://bexf3tjbivhhs" path="res://Scripts/outline_simple_material.tres" id="4_ttoej"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oxtn"]
+size = Vector3(0.757813, 0.912109, 0.575195)
+
+[node name="mate" instance=ExtResource("1_nhhuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398585, 0)
+script = ExtResource("2_7suxl")
+max_amount_collectable = 1
+item_name = "Mate Aceitero"
+item_texture = ExtResource("3_mc2hc")
+descripcion = "Esto es una descripcion"
+
+[node name="Mesh" parent="." index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+material_overlay = ExtResource("4_ttoej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00228882, 0.0155945, 0.00720215)
+shape = SubResource("BoxShape3D_7oxtn")

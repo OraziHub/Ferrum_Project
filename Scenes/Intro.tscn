@@ -1,0 +1,200 @@
+[gd_scene load_steps=10 format=3 uid="uid://djhfn81ud8xqy"]
+
+[ext_resource type="Script" path="res://Scenes/start_script.gd" id="1_cud6o"]
+[ext_resource type="Texture2D" uid="uid://u8rkiacr6eu8" path="res://Imgs/BG_Intro.png" id="2_n8mdw"]
+[ext_resource type="FontFile" uid="uid://50hs8n0ckrc5" path="res://Font/LondrinaShadow-Regular.ttf" id="3_1miqj"]
+[ext_resource type="FontFile" uid="uid://cl0yiq4qq2mxc" path="res://Font/CabinSketch-Bold.ttf" id="4_22f3g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x443t"]
+texture = ExtResource("2_n8mdw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2y1c"]
+bg_color = Color(0, 0, 0, 1)
+skew = Vector2(0.25, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ymvf"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.25, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sts31"]
+bg_color = Color(0, 0, 0, 0.956863)
+skew = Vector2(0.5, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sopod"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cud6o")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x443t")
+
+[node name="Version Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.516
+anchor_bottom = 1.0
+offset_left = 137.0
+offset_top = 148.0
+offset_right = 158.568
+offset_bottom = -484.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "v.0.0.1
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = 119.0
+offset_right = -137.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button Intro" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("3_1miqj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_y2y1c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ymvf")
+text = "I N T R O"
+
+[node name="Button Start" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_1miqj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_y2y1c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ymvf")
+text = "A R R A N C A R"
+
+[node name="Button Project" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_1miqj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_y2y1c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ymvf")
+text = "P R O Y E C T O"
+
+[node name="Button Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -462.0
+offset_top = -194.0
+offset_right = -376.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_22f3g")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxFlat_sts31")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sopod")
+text = "< Volver"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 189.0
+offset_right = 452.0
+offset_bottom = 436.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Hola viajero!
+Buscá la llave para abrir el Taller, y tendrás 60 segundos nomás para llevarte lo que gustes! Asi son las cosas entre robots, todo nos es útil para acondicionar y aprovechar!
+
+Espero te sea de ayuda!
+
+Don Ferrum."
+
+[connection signal="pressed" from="Button Back" to="." method="_on_button_back_pressed"]

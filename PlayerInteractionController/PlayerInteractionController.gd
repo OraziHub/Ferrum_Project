@@ -3,12 +3,14 @@ class_name PlayerInteractionController
 
 @onready var info_message: Label = $Messages/InfoMessage
 @onready var sub_message: Label = $Messages/SubMessage
+@onready var description_message: Label = $Messages/DescriptionMessage
 
 @export var player_controller: PlayerController
 
 func _ready():
 	info_message.text = ""
 	sub_message.text = ""
+	description_message.text = ""
 	
 func _input(event):
 	if player_controller.eyes_cast.is_colliding():
@@ -20,13 +22,17 @@ func _input(event):
 				if action == "interact":
 					for action_event in InputMap.action_get_events(action):
 						if action_event is InputEventKey:
-							info_message.text = "Press "+action_event.as_text() +" to interact with: "+ collider.item_name
+							info_message.text = "Apretá "+action_event.as_text() +" para llevarte "+ collider.item_name
+							description_message.text =  collider.descripcion
 		else:
 			info_message.text = ""
 			sub_message.text = ""
+			description_message.text = ""
+			
 	else:
 		info_message.text = ""	
 		sub_message.text = ""
+		description_message.text = ""
 
 	if Input.is_action_just_pressed("interact"):
 		var collider = player_controller.eyes_cast.get_collider()				

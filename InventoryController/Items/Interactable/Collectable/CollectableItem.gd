@@ -9,9 +9,9 @@ func interact(inventory_controller: InventoryController, callback: Callable):
 	
 	if found_item:
 		if found_item.quantity >= max_amount_collectable:
-			return callback.call(ValidatedResponse.create_new_validated_response(true, "You cannot carry any more items of type: " + item_name))
+			return callback.call(ValidatedResponse.create_new_validated_response(true, "No puedes llevar más elementos de tipo: " + item_name))
 			
-	callback.call(ValidatedResponse.create_new_validated_response(false, "Successfully interacted"))
+	callback.call(ValidatedResponse.create_new_validated_response(false, "Añadido a Tu Inventario"))
 
 func _get_configuration_warnings():
 	var string_array = super._get_configuration_warnings()

@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3 uid="uid://brdsyakev5qm2"]
+
+[ext_resource type="Script" path="res://Scenes/timeout.gd" id="1_kci3f"]
+
+[node name="Timeout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kci3f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -135.0
+offset_right = 210.5
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "¡Se acabó el tiempo!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = -70.5
+offset_right = 233.5
+offset_bottom = -21.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Esto fue un prototipo para realizar una prueba de usabilidad
+¿Podrías llenar un Cuestionario para darnos feedback?"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 56.0
+offset_right = 89.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ir a Cuestionario"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = 74.0
+offset_right = 81.0
+offset_bottom = 113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 20
+text = "Ir al Cuestionario"
+uri = "https://docs.google.com/forms/d/e/1FAIpQLScJUx7fE4OhOvpXLHvr2HUTNPNUwCpn1jqm5ieGxo40Ju8WgQ/viewform?usp=header"
+
+[node name="Button Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = 85.0
+offset_right = 133.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+text = "P r o b a r  d e  N u e v o!"
+
+[node name="Button Cuestionario" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = 25.0
+offset_right = 133.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.49
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+text = "I r  a l  C u e s t i o n a r i o"
+
+[connection signal="pressed" from="Button Start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="Button Cuestionario" to="." method="_on_button_cuestionario_pressed"]

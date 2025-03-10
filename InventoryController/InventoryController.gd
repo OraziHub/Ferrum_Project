@@ -2,7 +2,7 @@ extends PanelContainer
 class_name InventoryController
 
 var inventory: Array[InventoryItem] = []
-var inventory_capacity: int = 6
+var inventory_capacity: int = 4
 
 @onready var grid: GridContainer = $MarginContainer/GridContainer
 @onready var slot_scene: PackedScene = preload("res://InventoryController/Slot/Slot.tscn")
@@ -33,7 +33,7 @@ func add_item(item: CollectableItem, quantity: int) -> ValidatedResponse:
 	
 	if found_item == null:
 		if is_inventory_full():
-			return ValidatedResponse.create_new_validated_response(true, "Inventory is full")
+			return ValidatedResponse.create_new_validated_response(true, "El Inventario ya está lleno!")
 			
 		var new_inventory_item: InventoryItem = InventoryItem.new()
 		
@@ -48,11 +48,11 @@ func add_item(item: CollectableItem, quantity: int) -> ValidatedResponse:
 		
 		inventory.push_back(new_inventory_item)
 		render_inventory_items_into_available_slots()	
-		return ValidatedResponse.create_new_validated_response(false, "Successfully collected new item: "+ item.item_name)
+		return ValidatedResponse.create_new_validated_response(false, "Bien logrado, tiene un nuevo item: "+ item.item_name)
 	else:
 		found_item.quantity += quantity
 		render_inventory_items_into_available_slots()	
-		return ValidatedResponse.create_new_validated_response(false, "Successfully increased the quantity of "+ item.item_name)
+		return ValidatedResponse.create_new_validated_response(false, "Aumentaste con éxito la cantidad de: "+ item.item_name)
 		
 
 func is_inventory_full() -> bool:

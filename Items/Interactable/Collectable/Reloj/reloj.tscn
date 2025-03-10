@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://biqnkdq2iv56n"]
+
+[ext_resource type="PackedScene" uid="uid://cd2650wvwj01p" path="res://Items/Interactable/Collectable/Reloj/reloj.glb" id="1_5kp2m"]
+[ext_resource type="Script" path="res://Items/Interactable/Collectable/Reloj/reloj.gd" id="2_r30d1"]
+[ext_resource type="Texture2D" uid="uid://5qd8e7aidrdp" path="res://Items/Interactable/Collectable/Reloj/reloj.png" id="3_a82p5"]
+[ext_resource type="Material" uid="uid://bexf3tjbivhhs" path="res://Scripts/outline_simple_material.tres" id="4_eo2as"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nhmk6"]
+size = Vector3(1.5434, 2.09961, 0.875061)
+
+[node name="Reloj" instance=ExtResource("1_5kp2m")]
+script = ExtResource("2_r30d1")
+max_amount_collectable = 1
+item_name = "Reloshi"
+item_texture = ExtResource("3_a82p5")
+descripcion = "Funca conejo mientras me alejo
+"
+
+[node name="Mesh" parent="." index="0"]
+material_overlay = ExtResource("4_eo2as")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0260315, 0.0273438, -0.0038147)
+shape = SubResource("BoxShape3D_nhmk6")

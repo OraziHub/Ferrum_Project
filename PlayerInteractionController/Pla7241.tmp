@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxgko0bcehgd6"]
+
+[ext_resource type="Script" path="res://PlayerInteractionController/PlayerInteractionController.gd" id="1_ethe1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itsu1"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+skew = Vector2(0.25, 0)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 1
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+anti_aliasing = false
+
+[node name="PlayerInteractionController" type="Node3D"]
+script = ExtResource("1_ethe1")
+
+[node name="Messages" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 96.0
+offset_right = 64.5
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="DescriptionMessage" type="Label" parent="Messages"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_itsu1")
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Messages"]
+layout_mode = 2
+alignment = 1
+
+[node name="InfoMessage" type="Label" parent="Messages/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+horizontal_alignment = 1
+
+[node name="SubMessage" type="Label" parent="Messages/VBox"]
+layout_mode = 2
+size_flags_vertical = 6
+horizontal_alignment = 1
+vertical_alignment = 2

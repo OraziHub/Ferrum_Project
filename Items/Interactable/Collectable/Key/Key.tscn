@@ -1,18 +1,22 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://budu3tmyi4r0c"]
 
 [ext_resource type="Texture2D" uid="uid://bjegqjrdmlfxa" path="res://Items/Interactable/Collectable/Key/key.png" id="1_3d7af"]
 [ext_resource type="Script" path="res://Items/Interactable/Collectable/Key/Key.gd" id="1_jkbvw"]
+[ext_resource type="PackedScene" uid="uid://c8elpg8j4c1sy" path="res://Items/Interactable/Collectable/Key/key.glb" id="3_8gths"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4awyo"]
 transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_3d7af")
+albedo_texture_force_srgb = true
+metallic_specular = 0.0
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_6vcrm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cp105"]
+size = Vector3(2.16943, 2.00299, 1.31104)
 
 [node name="Key" type="RigidBody3D"]
 script = ExtResource("1_jkbvw")
@@ -20,9 +24,14 @@ max_amount_collectable = 1
 item_name = "Key"
 item_texture = ExtResource("1_3d7af")
 
+[node name="Key" parent="." instance=ExtResource("3_8gths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112377, 0.318054, -0.0913086)
+visible = false
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_4awyo")
 mesh = SubResource("QuadMesh_6vcrm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0969238, 0.317963, -0.155518)
 shape = SubResource("BoxShape3D_cp105")

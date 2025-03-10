@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3wmu6m0ruyjm"]
+
+[ext_resource type="PackedScene" uid="uid://kol454gjxh2y" path="res://Items/Interactable/Collectable/Planta/planta_mecanico.glb" id="1_0tdf5"]
+[ext_resource type="Script" path="res://Items/Interactable/Collectable/Planta/planta.gd" id="2_fg2ir"]
+[ext_resource type="Texture2D" uid="uid://d1b880vtbanmp" path="res://Items/Interactable/Collectable/Planta/planta_mecanico.png" id="3_ybn0q"]
+[ext_resource type="Material" uid="uid://bexf3tjbivhhs" path="res://Scripts/outline_simple_material.tres" id="4_o1h8k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4272"]
+size = Vector3(1, 2.12012, 1.98132)
+
+[node name="Planta" instance=ExtResource("1_0tdf5")]
+script = ExtResource("2_fg2ir")
+max_amount_collectable = 2
+item_name = "Mecha Planta"
+item_texture = ExtResource("3_ybn0q")
+
+[node name="Mesh1_Mesh1_001_1" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0, 0)
+
+[node name="Mesh" parent="Mesh1_Mesh1_001_1" index="0"]
+material_overlay = ExtResource("4_o1h8k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00830078, 0.0438843)
+shape = SubResource("BoxShape3D_c4272")

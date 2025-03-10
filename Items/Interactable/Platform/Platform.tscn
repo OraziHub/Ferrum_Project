@@ -1,9 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://dma6c1kidspde"]
 
-[ext_resource type="Texture2D" uid="uid://cdj06ubewxrhe" path="res://icon.svg" id="1_cnu61"]
+[ext_resource type="Texture2D" uid="uid://buqmi5gl0mad6" path="res://Items/Interactable/Collectable/Sombrero/sombrero_0.jpg" id="1_2k15l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta051"]
-albedo_texture = ExtResource("1_cnu61")
+albedo_texture = ExtResource("1_2k15l")
+heightmap_enabled = true
+heightmap_scale = 14.02
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
 
 [node name="Platform" type="CSGBox3D"]
 use_collision = true
