@@ -1,4 +1,5 @@
-#El Taller de Don Ferrum
+## El Taller de Don Ferrum 
+*v0.01*
 
 Este es un prototipo interactivo de EL Taller de Don Ferrum, desarrollado como parte de la Maestria en Producción y Dirección de Animación y Videojuegos para la Universidad Nacional de Córdoba.
 
