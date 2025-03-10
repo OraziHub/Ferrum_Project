@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Ferrum Project"
+config/version="0.01"
 run/main_scene="res://Scenes/Start.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [display]
 

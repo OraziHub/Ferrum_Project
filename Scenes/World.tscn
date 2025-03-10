@@ -55,6 +55,7 @@ size = Vector3(85.3057, 1, 48.3268)
 
 [node name="Floor2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22279, 5.4876, 2.49428)
+visible = false
 material_overlay = ExtResource("6_3kee8")
 use_collision = true
 size = Vector3(19.9601, 1, 12.084)
@@ -150,7 +151,7 @@ descripcion = "No pierda el ritmo que la vida es breve
 mucho autotune en las cuerdas hasta que suene leve"
 
 [node name="Lanza Rota" parent="Items" instance=ExtResource("14_4wh14")]
-transform = Transform3D(0.526804, -1.42968, -0.0642779, 0.2493, 0.159124, -1.49605, 1.40924, 0.506294, 0.288685, -46.8841, -0.379953, -8.48391)
+transform = Transform3D(0.345445, -0.937492, -0.0421497, 0.163475, 0.104344, -0.981014, 0.924091, 0.331996, 0.189302, -46.8841, -0.379953, -8.48391)
 descripcion = "Lanzani como Peter, Barrani como Masla
 Alisten para el finde que juega el CASLA"
 
@@ -172,20 +173,25 @@ spot_attenuation = -0.65
 spot_angle = 17.9604
 spot_angle_attenuation = 0.901251
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Posters" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Posters"]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 9.73708, 2.7467, 8.00537)
 texture = ExtResource("21_mkhf4")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="Sprite3D2" type="Sprite3D" parent="Posters"]
 transform = Transform3D(0.1, 0, 1.74846e-08, 0, 0.1, 0, -1.74846e-08, 0, 0.1, 9.73708, 3.23932, -2.99463)
 texture = ExtResource("22_bpfhp")
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
+[node name="Sprite3D3" type="Sprite3D" parent="Posters"]
 transform = Transform3D(-0.0758919, 0, -0.0651185, 0, 0.1, 0, 0.0651185, 0, -0.0758919, 14.6817, 1.08105, 7.29639)
 texture = ExtResource("23_1dmfk")
 
-[node name="caballo_03" parent="." instance=ExtResource("24_56nbn")]
-transform = Transform3D(-0.856159, 0, 0.516713, 0, 1, 0, -0.516713, 0, -0.856159, 18.4125, 1.73016, 6.89124)
-
-[node name="caballo_04" parent="." instance=ExtResource("25_rmvl2")]
+[node name="Caballos" type="Node3D" parent="."]
 transform = Transform3D(-0.856159, 0, 0.516713, 0, 1, 0, -0.516713, 0, -0.856159, 20.2198, 1.77515, 6.95364)
+
+[node name="caballo_03" parent="Caballos" instance=ExtResource("24_56nbn")]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 1.57958, -0.0449899, -0.880431)
+
+[node name="caballo_04" parent="Caballos" instance=ExtResource("25_rmvl2")]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
